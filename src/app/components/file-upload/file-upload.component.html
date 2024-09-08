@@ -1,0 +1,9 @@
+<file-upload-form (onUploadedFile)="handleUploadedFile($event)" />
+@if (generatedLink != '') {
+<div class="w-fit mx-auto mt-5 flex gap-2">
+  <a class="bg-[#444] p-2 rounded">{{ generatedLink }}</a>
+  <button class="bg-indigo-500 p-2 rounded" (click)="copyLink()">
+    {{ clickedCopyButton ? "¡Copiado!" : "Copiar" }}
+  </button>
+</div>
+}
