@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, output } from '@angular/core';
+import { FileDetailsComponent } from '../file-details/file-details.component';
 
 @Component({
   selector: 'dropzone',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FileDetailsComponent],
   templateUrl: './dropzone.component.html',
 })
 export class DropzoneComponent {
@@ -18,17 +19,5 @@ export class DropzoneComponent {
 
   clearFile(): void {
     this.file = null;
-  }
-
-  getEquivalentSize(size: number): string {
-    if (size < 1024) {
-      return `${size} B`;
-    } else if (size < 1024 * 1024) {
-      return `${(size / 1024).toFixed(2)} KB`;
-    } else if (size < 1024 * 1024 * 1024) {
-      return `${(size / 1024 / 1024).toFixed(2)} MB`;
-    } else {
-      return `${(size / 1024 / 1024 / 1024).toFixed(2)} GB`;
-    }
   }
 }
