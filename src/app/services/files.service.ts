@@ -17,4 +17,8 @@ export class FilesService {
 
     return this.http.post<UploadedFile>(`${this.baseUrl}`, formData);
   }
+
+  get(slug: string): Observable<UploadedFile> {
+    return this.http.get<UploadedFile>(`${this.baseUrl}/${slug}`);
+  }
 }

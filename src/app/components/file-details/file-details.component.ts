@@ -1,4 +1,5 @@
 import { Component, input } from '@angular/core';
+import { UploadedFile } from '@app/interfaces/uploaded-file.interface';
 
 @Component({
   selector: 'file-details',
@@ -8,7 +9,7 @@ import { Component, input } from '@angular/core';
   styles: ``,
 })
 export class FileDetailsComponent {
-  public file = input.required<File>();
+  public file = input.required<File | UploadedFile>();
 
   getEquivalentSize(size: number): string {
     if (size < 1024) {

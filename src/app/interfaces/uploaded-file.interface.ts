@@ -1,7 +1,8 @@
 export interface UploadedFile {
   id: string;
   name: string;
-  extension: string;
+  type: string;
+  size: number;
   url: string;
   slug: string;
 }
