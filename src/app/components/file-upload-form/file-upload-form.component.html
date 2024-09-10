@@ -1,15 +1,18 @@
 <form>
   <dropzone (onDropFile)="handleDropFile($event)" />
   @if (error.length > 0) {
-  <div class="text-center bg-red-500/15 text-red-300 rounded mt-5 p-2 relative">
+  <div
+    class="text-center bg-red-500/15 text-red-300 rounded mt-5 p-2 flex justify-between"
+  >
+    {{ error }}
     <button
-      class="absolute text-red-600 top-50 right-0 px-2 font-bold"
+      class="text-red-600 px-2 font-bold"
+      title="Cerrar"
       type="button"
       (click)="dismissError()"
     >
       x
     </button>
-    {{ error }}
   </div>
   }
   <button

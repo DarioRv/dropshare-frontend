@@ -18,7 +18,7 @@ export class FileUploadFormComponent {
   public onUploadedFile = output<string>();
 
   public isUploading = false;
-  public error: string = 'dadasdas';
+  public error: string = '';
 
   handleDropFile(file: File): void {
     this.file = file;
@@ -41,7 +41,8 @@ export class FileUploadFormComponent {
   }
 
   generateLink(slug: string): string {
-    return `${environment.apiUrl}/files/${slug}`;
+    const website = window.location.origin;
+    return `${website}/${slug}`;
   }
 
   dismissError(): void {
