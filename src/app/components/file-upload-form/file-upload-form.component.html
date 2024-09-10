@@ -1,5 +1,10 @@
 <form>
   <dropzone (onDropFile)="handleDropFile($event)" />
+  @if (error.length > 0) {
+  <div class="text-center bg-red-500/15 text-red-300 rounded mt-5 p-2">
+    {{ error }}
+  </div>
+  }
   <button
     type="button"
     class="bg-indigo-500 block w-full py-2 mt-10 transition-colors duration-300 hover:bg-indigo-600 disabled:bg-indigo-400 disabled:cursor-not-allowed rounded"

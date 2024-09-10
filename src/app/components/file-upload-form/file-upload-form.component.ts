@@ -18,6 +18,7 @@ export class FileUploadFormComponent {
   public onUploadedFile = output<string>();
 
   public isUploading = false;
+  public error: string = '';
 
   handleDropFile(file: File): void {
     this.file = file;
@@ -33,7 +34,7 @@ export class FileUploadFormComponent {
         },
         error: (error) => {
           this.isUploading = false;
-          console.error(error);
+          this.error = error.error.message;
         },
       });
     }
