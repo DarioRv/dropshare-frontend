@@ -11,7 +11,7 @@ import { FileUploadFormComponent } from '../file-upload-form/file-upload-form.co
   },
 })
 export class FileUploadComponent {
-  public generatedLink: string = 'dasdsadasdas';
+  public generatedLink: string = '';
   clickedCopyButton: boolean = false;
 
   handleUploadedFile(link: string): void {

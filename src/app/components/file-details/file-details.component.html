@@ -18,7 +18,9 @@
   </div>
   <div class="w-full text-center md:text-start">
     <h4 class="text-3xl">{{ file().name }}</h4>
-    <span>{{ file().type }}</span>
-    <small class="mb-2">{{ getEquivalentSize(file().size) }}</small>
+    <span class="block mb-2">{{ file().type }}</span>
+    <small class="p-1 bg-[#333] w-fit rounded">{{
+      getEquivalentSize(file().size)
+    }}</small>
   </div>
 </div>
